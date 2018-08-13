@@ -2,10 +2,8 @@ package app.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by tlatz on 7/31/2018.
@@ -19,6 +17,13 @@ public class Event {
 
     private String name;
     private String description;
+
+    @ManyToMany
+    private List<Type> type;
+    private String price;
+    private String date;
+    private String startTime;
+    private String endTime;
 
 
 }
